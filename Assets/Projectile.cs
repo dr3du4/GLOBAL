@@ -12,7 +12,7 @@ public class Projectile : MonoBehaviour
         Destroy(gameObject, lifetime);
     }
 
-    void OnCollisionEnter(Collision collision)
+   void OnCollisionEnter(Collision collision)
     {
         // Sprawdzenie kolizji i uruchomienie efektu eksplozji
         if (explosionEffect != null)
@@ -25,4 +25,5 @@ public class Projectile : MonoBehaviour
 
         // Możesz tu dodać logikę obrażeń, np. dla przeciwników
     }
+    
 }
