@@ -10,7 +10,7 @@ public class PlayerSteering : MonoBehaviour
         _input = GetComponent<PlayerInput>();
         RegisterPlayerInput();
     }
-    void Update() {
+    void FixedUpdate() {
         CheckIfPlayerMoved();
     }
     
