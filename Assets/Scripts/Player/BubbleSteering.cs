@@ -31,7 +31,7 @@ public class BubbleSteering : MonoBehaviour, SteeringScheme
         _rigidbody.AddForce(Vector3.forward * (forwardForce * forward));
     }
 
-    public void Interact() {
+    public bool Interact() {
         throw new System.NotImplementedException();
     }
 

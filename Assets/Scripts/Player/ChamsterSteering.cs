@@ -19,8 +19,9 @@ public class ChamsterSteering : MonoBehaviour, SteeringScheme
         throw new System.NotImplementedException();
     }
 
-    public void Interact() {
-        throw new System.NotImplementedException();
+    public bool Interact() {
+        Physics.CheckSphere(transform.position, 20, LayerMask.NameToLayer("Interactable"));
+        return false;
     }
 
     public void Jump() {
