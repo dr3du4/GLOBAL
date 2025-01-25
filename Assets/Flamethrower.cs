@@ -7,7 +7,7 @@ public class Flamethrower : MonoBehaviour
     public float damage = 10f;       // Obrażenia
     public float range = 5f;         // Zasięg miotacza ognia
     public LayerMask damageLayer;    // Warstwa obiektów, które mogą być trafione
-
+    public GameObject luffa;
     private bool isFiring = false;
     public Transform target; // Obiekt, który system cząsteczek ma śledzić (np. broń)
     
@@ -16,9 +16,8 @@ public class Flamethrower : MonoBehaviour
     {
         if (target != null)
         {
-            // Dopasowanie pozycji i rotacji systemu cząsteczek do broni/postaci
-            //fireEffect.transform.position = target.position;
-            var vector=new Vector3(180f, 0f, 0f);
+           
+            var vector=new Vector3(180f, 0f, 0f); 
             fireEffect.transform.rotation = target.rotation* Quaternion.Euler(0, 180, 0);
         }
     }
