@@ -9,13 +9,25 @@ public class Flamethrower : MonoBehaviour
     public LayerMask damageLayer;    // Warstwa obiektów, które mogą być trafione
 
     private bool isFiring = false;
+    public Transform target; // Obiekt, który system cząsteczek ma śledzić (np. broń)
+    
+
+    void LateUpdate()
+    {
+        if (target != null)
+        {
+            // Dopasowanie pozycji i rotacji systemu cząsteczek do broni/postaci
+            //fireEffect.transform.position = target.position;
+            var vector=new Vector3(180f, 0f, 0f);
+            fireEffect.transform.rotation = target.rotation* Quaternion.Euler(0, 180, 0);
+        }
+    }
 
     void Update()
     {
         // Włącz/wyłącz ogień
         if (Input.GetMouseButton(0)) // LPM do aktywacji
         {
-            Debug.Log("Fire");
             StartFiring();
         }
         else
@@ -58,16 +70,11 @@ public class Flamethrower : MonoBehaviour
         {
             Debug.Log("Trafiono obiekt: " + hitCollider.name); // Wyświetla nazwę trafionego obiektu
 
-            // Zadaj obrażenia, jeśli obiekt ma komponent "Health"
+            // Zadaj obrażenia, jeśli obiekt ma komponent "Enemy"
             var enemy = hitCollider.GetComponent<Enemy>();
             if (enemy != null)
             {
-                enemy.TakeDamage(damage * Time.deltaTime*10); // Obrażenia w czasie
-                Debug.Log("Zadano obrażenia: " +damage * Time.deltaTime*10);
-            }
-            else
-            {
-                Debug.Log("Obiekt " + hitCollider.name + " nie ma komponentu Enemy!");
+                enemy.TakeDamage(damage * Time.deltaTime * 10); // Obrażenia w czasie
             }
         }
     }
