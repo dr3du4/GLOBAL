@@ -581,7 +581,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveForce: 300
-  jumpForce: 5
   slopeForce: 45000
 --- !u!54 &2969410959477803467
 Rigidbody:
@@ -591,7 +590,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6164107978542005962}
   serializedVersion: 4
-  m_Mass: 7
+  m_Mass: 3
   m_Drag: 1
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
