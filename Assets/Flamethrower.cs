@@ -59,15 +59,15 @@ public class Flamethrower : MonoBehaviour
             Debug.Log("Trafiono obiekt: " + hitCollider.name); // Wyświetla nazwę trafionego obiektu
 
             // Zadaj obrażenia, jeśli obiekt ma komponent "Health"
-            var health = hitCollider.GetComponent<Health>();
-            if (health != null)
+            var enemy = hitCollider.GetComponent<Enemy>();
+            if (enemy != null)
             {
-                health.TakeDamage(damage * Time.deltaTime); // Obrażenia w czasie
-                Debug.Log("Zadano obrażenia: " + damage * Time.deltaTime);
+                enemy.TakeDamage(damage * Time.deltaTime*10); // Obrażenia w czasie
+                Debug.Log("Zadano obrażenia: " +damage * Time.deltaTime*10);
             }
             else
             {
-                Debug.Log("Obiekt " + hitCollider.name + " nie ma komponentu Health!");
+                Debug.Log("Obiekt " + hitCollider.name + " nie ma komponentu Enemy!");
             }
         }
     }
