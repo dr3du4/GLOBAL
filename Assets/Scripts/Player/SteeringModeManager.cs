@@ -8,6 +8,7 @@ namespace Player {
         private SteeringScheme _chamsterSteering;
         [SerializeField] GameObject _bubble;
         [SerializeField] GameObject _chamsterBubble;
+        [SerializeField] GameObject _chamsterBubbleRig;
         [SerializeField] GameObject _chamster;
     
         private void Start() {
@@ -27,6 +28,7 @@ namespace Player {
 
         private void SwitchSteeringToBubble() {
             _chamsterBubble.SetActive(true);
+            _chamsterBubbleRig.SetActive(true);
             _chamsterBubble.transform.position = _bubble.transform.position;
             _bubble.SetActive(false);
             _chamster.SetActive(false);
@@ -40,6 +42,7 @@ namespace Player {
             _bubble.transform.position = _chamsterBubble.transform.position;
             _chamster.transform.position = _chamsterBubble.transform.position + chamsterSpawnOffset;
             _chamsterBubble.SetActive( false);
+            _chamsterBubbleRig.SetActive( false);
             _playerSteering.SwitchSteeringScheme(_chamsterSteering);
             Camera.main.GetComponent<CameraFollow>().SetTarget(_chamster.transform);
         }

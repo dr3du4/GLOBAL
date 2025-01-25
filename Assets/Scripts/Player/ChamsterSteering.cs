@@ -5,11 +5,11 @@ namespace Player {
         private Rigidbody _rigidbody;
         private Bazooka _bazooka;
         private Flamethrower _flamethrower;
+        private Animator _animator;
         
         private Camera _camera;
 
-        public float forwardForce = 5f;
-        public float sideForce = 5f;
+        public float moveForce = 5f;
         public float jumpForce = 5f;
         public float slopeForce = 10f;
         
@@ -19,6 +19,7 @@ namespace Player {
             _rigidbody = GetComponent<Rigidbody>();
             _bazooka = transform.parent.GetComponentInChildren<Bazooka>();
             _flamethrower = transform.parent.GetComponentInChildren<Flamethrower>();
+            _animator = transform.GetComponentInChildren<Animator>();
             _camera = Camera.main;
         }
 
@@ -28,6 +29,11 @@ namespace Player {
             if (!CanMove()) {
                 _rigidbody.AddForce(Vector3.down * slopeForce, ForceMode.Acceleration);
             }
+            UpdateAnimatorVars();
+        }
+        
+        private void UpdateAnimatorVars() {
+            _animator.SetFloat("Speed", _rigidbody.linearVelocity.magnitude);
         }
 
         public void Move(Vector2 direction) {
@@ -35,27 +41,18 @@ namespace Player {
             if (!CanMove()) {
                 return;
             }
-
-            if (direction.y != 0) {
-                MoveForward(direction.y);
+            if(direction.y != 0 || direction.x != 0) {
+                Vector3 cameraRight = _camera.transform.right;
+                cameraRight.y = 0;
+                var sideFactor = cameraRight * direction.x;
+            
+                Vector3 cameraForward = _camera.transform.forward;
+                cameraForward.y = 0;
+                var forwardFactor = cameraForward * direction.y;
+                _rigidbody.AddForce((sideFactor + forwardFactor) * moveForce);
+                _animator.transform.LookAt((transform.position + sideFactor + forwardFactor));
+                _animator.transform.rotation = Quaternion.Euler(0, _animator.transform.rotation.eulerAngles.y - 180, 0);
             }
-
-            if (direction.x != 0) {
-                MoveAside(direction.x);
-            }
-        }
-
-        private void MoveAside(float sideDirection) {
-            Vector3 cameraRight = _camera.transform.right;
-            cameraRight.y = 0;
-            _rigidbody.AddForce(cameraRight * (sideForce * sideDirection));
-            // transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles + new Vector3(0, sideDirection * sideForce, 0));
-        }
-
-        private void MoveForward(float forward) {
-            Vector3 cameraForward = _camera.transform.forward;
-            cameraForward.y = 0;
-            _rigidbody.AddForce(cameraForward * (forwardForce * forward));
         }
 
         public bool Interact() {
@@ -76,7 +73,7 @@ namespace Player {
         }
 
         public void Jump() {
-            throw new System.NotImplementedException();
+            _rigidbody.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
         }
 
         public void Attack1(Vector3 mousePosition) {
