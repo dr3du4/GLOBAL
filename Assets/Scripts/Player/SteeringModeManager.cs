@@ -1,3 +1,4 @@
+using Unity.Cinemachine;
 using UnityEngine;
 
 namespace Player {
@@ -33,7 +34,7 @@ namespace Player {
             _bubble.SetActive(false);
             _chamster.SetActive(false);
             _playerSteering.SwitchSteeringScheme(_bubbleSteering);
-            Camera.main.GetComponent<CameraFollow>().SetTarget(_chamsterBubble.transform);
+            Camera.main.GetComponent<CinemachineCamera>().Follow = _chamsterBubble.transform;
         } 
     
         private void SwitchSteeringToChamster() {
@@ -44,7 +45,7 @@ namespace Player {
             _chamsterBubble.SetActive( false);
             _chamsterBubbleRig.SetActive( false);
             _playerSteering.SwitchSteeringScheme(_chamsterSteering);
-            Camera.main.GetComponent<CameraFollow>().SetTarget(_chamster.transform);
+            Camera.main.GetComponent<CinemachineCamera>().Follow = _chamster.transform;
         }
     }
 }
