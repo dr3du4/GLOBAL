@@ -162,6 +162,7 @@ GameObject:
   - component: {fileID: 2627762526983213245}
   - component: {fileID: 8361280622552775084}
   - component: {fileID: 6280088365984766935}
+  - component: {fileID: 1521279156528146993}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -245,6 +246,21 @@ MonoBehaviour:
   _bubble: {fileID: 573079854296906348}
   _chamsterBubble: {fileID: 5989006019336922032}
   _chamster: {fileID: 6164107978542005962}
+--- !u!114 &1521279156528146993
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2308307626886486896}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66ecfe022f1a64c46818bbc305ca247f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _bubble: {fileID: 573079854296906348}
+  _chamsterBubble: {fileID: 5989006019336922032}
+  _chamster: {fileID: 6164107978542005962}
 --- !u!1 &5989006019336922032
 GameObject:
   m_ObjectHideFlags: 0
@@ -261,7 +277,7 @@ GameObject:
   - component: {fileID: 2971853137922433698}
   m_Layer: 0
   m_Name: ChamsterInBubble
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -370,6 +386,7 @@ MonoBehaviour:
   forwardForce: 80
   sideForce: 80
   jumpForce: 5
+  slopeForce: 10
 --- !u!54 &2971853137922433698
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -413,7 +430,7 @@ GameObject:
   - component: {fileID: 2969410959477803467}
   m_Layer: 0
   m_Name: Chamster
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -521,9 +538,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28d7a508c243dea45b08e68ef83b02dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  forwardForce: 30
+  forwardForce: 100
   sideForce: 30
   jumpForce: 5
+  slopeForce: 50000
 --- !u!54 &2969410959477803467
 Rigidbody:
   m_ObjectHideFlags: 0
