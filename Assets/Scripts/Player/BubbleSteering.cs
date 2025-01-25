@@ -14,6 +14,12 @@ public class BubbleSteering : MonoBehaviour, SteeringScheme
         _camera = Camera.main;
     }
     public void Move(Vector2 direction) {
+        Collider[] hitColliders = Physics.OverlapSphere(transform.position, 1);
+        foreach (var hit in hitColliders) {
+            if (hit.CompareTag("NotForBubble")) {
+                return;
+            }
+        }
         if(direction.y != 0) {
             MoveForward(direction.y);
         }

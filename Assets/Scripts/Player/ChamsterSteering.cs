@@ -15,6 +15,14 @@ namespace Player {
         }
 
         public void Move(Vector2 direction) {
+            // If player is moving on the floor tagged by "NotForChamster" tag, chamster will not move
+            Collider[] hitColliders = Physics.OverlapSphere(transform.position, 1);
+            foreach (var hit in hitColliders) {
+                if (hit.CompareTag("NotForChamster")) {
+                    return;
+                }
+            }
+            
             if(direction.y != 0) {
                 MoveForward(direction.y);
             }
