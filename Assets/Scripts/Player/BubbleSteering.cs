@@ -63,7 +63,11 @@ public class BubbleSteering : MonoBehaviour, SteeringScheme
         _rigidbody.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
     }
 
-    public void Attack1(Vector3 mousePosition) {
+    public void StartAttack1() {
+        return;
+    }
+
+    public void EndAttack1() {
         return;
     }
 
