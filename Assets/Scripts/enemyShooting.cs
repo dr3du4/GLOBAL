@@ -7,7 +7,7 @@ public class enemyShooting : MonoBehaviour
     public float fireRate = 1f; // Czas pomiędzy strzałami (w sekundach)
     public string playerTag = "Player"; // Tag gracza
     public Transform playerTransform; // Referencja do gracza (ustawiona w inspektorze)
-
+    public GameObject unicorn;
     private bool isPlayerInRange = false; // Czy gracz jest w zasięgu?
     private float nextFireTime = 0f; // Czas do następnego strzału
     private Vector3 targetPosition; // Pozycja gracza w momencie strzału
@@ -55,7 +55,9 @@ public class enemyShooting : MonoBehaviour
     void Shoot()
     {
         if (playerTransform == null) return; // Sprawdź, czy gracz jest dostępny
-
+        
+        Animator animator = unicorn.GetComponent<Animator>();
+        animator.SetTrigger("strzal");
         // Tworzymy kierunek od przeciwnika do gracza
         Vector3 directionToPlayer = (playerTransform.position - transform.position).normalized;
 
