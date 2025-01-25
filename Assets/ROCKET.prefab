@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 8399859455914650383}
   - component: {fileID: 135774151784329007}
   m_Layer: 0
-  m_Name: Bullet
+  m_Name: ROCKET
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -151,3 +151,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lifetime: 20
   explosionEffect: {fileID: 1294734016097134424, guid: c274cd12dca1d624595c52625b4d6e4a, type: 3}
+  damage: 10
