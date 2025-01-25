@@ -14,7 +14,7 @@ public class Bazooka : MonoBehaviour
     void Update()
     {
         // Strzał z bazooki
-        if (Input.GetButtonDown("Fire1") && canShoot)
+        if (Input.GetKey(KeyCode.U) && canShoot)
         {
             Shoot();
         }
@@ -28,8 +28,8 @@ public class Bazooka : MonoBehaviour
 
         if (rb != null)
         {
-            // Nadanie pociskowi siły
-            rb.AddForce(firePoint.forward * fireForce, ForceMode.Impulse);
+            // Nadanie pociskowi siły w kierunku osi Z (przód bazooki)
+            rb.linearVelocity = firePoint.forward * fireForce;
         }
 
         // Rozpoczęcie czasu przeładowania
