@@ -10,7 +10,8 @@ namespace Player {
         public SteeringScheme CurrentSteeringScheme => _currentSteeringScheme;
 
         PlayerInput _input;
-        private void OnJump(InputAction.CallbackContext obj) {
+        public void OnJumpKey(InputAction.CallbackContext obj) {
+            Debug.Log("Jump key pressed!");
             _currentSteeringScheme.Jump();
         } 
         void Start() {
@@ -62,7 +63,7 @@ namespace Player {
         }
     
         private void RegisterPlayerInput() {
-            _input.actions["Jump"].performed += OnJump;
+            _input.actions["Jump"].performed += OnJumpKey;
             _input.actions["Interact"].performed += OnInteraction;
             _input.actions["Attack_1"].performed += OnAttack1;
         }

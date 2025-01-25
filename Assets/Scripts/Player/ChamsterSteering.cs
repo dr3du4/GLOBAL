@@ -49,8 +49,10 @@ namespace Player {
                 Vector3 cameraForward = _camera.transform.forward;
                 cameraForward.y = 0;
                 var forwardFactor = cameraForward * direction.y;
-                _rigidbody.AddForce((sideFactor + forwardFactor) * moveForce);
-                _animator.transform.LookAt((transform.position + sideFactor + forwardFactor));
+                var travelDirection = sideFactor + forwardFactor;
+                travelDirection.y = 0;
+                _rigidbody.AddForce(travelDirection.normalized * moveForce);
+                _animator.transform.LookAt((transform.position + travelDirection));
                 _animator.transform.rotation = Quaternion.Euler(0, _animator.transform.rotation.eulerAngles.y - 180, 0);
             }
         }
@@ -73,7 +75,7 @@ namespace Player {
         }
 
         public void Jump() {
-            _rigidbody.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+            return;
         }
 
         public void Attack1(Vector3 mousePosition) {
