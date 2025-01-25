@@ -57,13 +57,14 @@ public class BubbleSteering : MonoBehaviour, SteeringScheme
     }
 
     private bool CanMove() {
-        // Return false if player walks over the floor tagged by "NotForBubble" tag. It should maximaly accurate
-        Collider[] hitColliders = Physics.OverlapSphere(transform.position, 1);
-        foreach (var hit in hitColliders) {
-            if (hit.CompareTag("NotForBubble")) {
+        Collider[] colliders = GetComponents<Collider>();
+
+        foreach (var collider in colliders)
+        {
+            if (collider.CompareTag("NotForBubble")) {
                 return false;
             }
         }
-        return true;
+        return true; 
     }
 }
