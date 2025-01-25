@@ -4,14 +4,14 @@ using UnityEngine;
 public class BubbleSteering : MonoBehaviour, SteeringScheme
 {
     private Rigidbody _rigidbody;
-    private PlayerSteering _playerSteering;
+    private Camera _camera;
+    
     public float forwardForce = 5f;
     public float sideForce = 5f;
     public float jumpForce = 5f;
     private void Start() {
         _rigidbody = GetComponent<Rigidbody>();
-        _playerSteering = transform.parent.GetComponent<PlayerSteering>();
-        _playerSteering.SwitchSteeringScheme(this);
+        _camera = Camera.main;
     }
     public void Move(Vector2 direction) {
         if(direction.y != 0) {
@@ -23,19 +23,23 @@ public class BubbleSteering : MonoBehaviour, SteeringScheme
     }
 
     private void MoveAside(float sideDirection) {
-        _rigidbody.AddForce(Vector3.right * (sideForce * sideDirection));
+        Vector3 cameraRight = _camera.transform.right;
+        cameraRight.y = 0;
+        _rigidbody.AddForce(cameraRight * (sideForce * sideDirection));
         // transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles + new Vector3(0, sideDirection * sideForce, 0));
     }
 
     private void MoveForward(float forward) {
-        _rigidbody.AddForce(Vector3.forward * (forwardForce * forward));
+        Vector3 cameraForward = _camera.transform.forward;
+        cameraForward.y = 0;
+        _rigidbody.AddForce(cameraForward * (forwardForce * forward));
     }
 
     public bool Interact() {
-        throw new System.NotImplementedException();
+        return true;
     }
 
     public void Jump() {
-        _rigidbody.AddForce(transform.up);
+        _rigidbody.AddForce(transform.up * jumpForce, ForceMode.Impulse);
     }
 }

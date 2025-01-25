@@ -1628,13 +1628,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4eef43d3cfb1e544da0dcbafcfc88830, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 0}
+  target: {fileID: 1616848304}
   followSpeed: 5
   rotationSpeed: 100
   zoomSpeed: 2
   minZoom: 5
   maxZoom: 20
   verticalRotationLimit: 80
+--- !u!4 &1616848304 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6050281210153639705, guid: 10a2e5e098a5e8048a932a5a1c8667eb, type: 3}
+  m_PrefabInstance: {fileID: 4436913223069755458}
+  m_PrefabAsset: {fileID: 0}
 --- !u!43 &1885969215
 Mesh:
   m_ObjectHideFlags: 0
@@ -1808,6 +1813,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 573079854296906348, guid: 10a2e5e098a5e8048a932a5a1c8667eb, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2308307626886486896, guid: 10a2e5e098a5e8048a932a5a1c8667eb, type: 3}
       propertyPath: m_Name
       value: Player
@@ -1851,6 +1860,18 @@ PrefabInstance:
     - target: {fileID: 2448389607622249829, guid: 10a2e5e098a5e8048a932a5a1c8667eb, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2969410959477803467, guid: 10a2e5e098a5e8048a932a5a1c8667eb, type: 3}
+      propertyPath: m_Constraints
+      value: 112
+      objectReference: {fileID: 0}
+    - target: {fileID: 6164107978542005962, guid: 10a2e5e098a5e8048a932a5a1c8667eb, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7559430521452715677, guid: 10a2e5e098a5e8048a932a5a1c8667eb, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.87
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
