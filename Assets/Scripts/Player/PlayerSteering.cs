@@ -17,8 +17,18 @@ namespace Player {
         }
         void FixedUpdate() {
             CheckIfPlayerMoved();
+            CheckIfPlayerAttack2();
         }
-    
+
+        private void CheckIfPlayerAttack2() {
+            if (_input.actions["Attack_2"].IsPressed()) {
+                OnAttack2();
+            }
+            else {
+                OnEndAttack2();
+            }
+        }
+
         public void SwitchSteeringScheme(SteeringScheme newSteeringScheme) {
             _currentSteeringScheme = newSteeringScheme;
         }
@@ -38,10 +48,25 @@ namespace Player {
                 _steeringModeManager.SwitchSteeringMode();
             }
         }
+        
+        public void OnAttack1(InputAction.CallbackContext obj) {
+            _currentSteeringScheme.Attack1(_input.actions["Look"].ReadValue<Vector2>());
+        }
+        
+        public void OnAttack2() {
+            // Debug.Log("Started fire!");
+            _currentSteeringScheme.StartAttack2(_input.actions["Look"].ReadValue<Vector2>());
+        }
+        
+        public void OnEndAttack2() {
+            // Debug.Log("Finished fire!");
+            _currentSteeringScheme.EndAttack2(_input.actions["Look"].ReadValue<Vector2>());
+        }
     
         private void RegisterPlayerInput() {
             _input.actions["Jump"].performed += OnJump;
             _input.actions["Interact"].performed += OnInteraction;
+            _input.actions["Attack_1"].performed += OnAttack1;
         }
     }
 }

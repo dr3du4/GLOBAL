@@ -557,6 +557,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5447767066494838169, guid: 5f21eb6cdc326b5439f0e261cb3db049, type: 3}
   m_PrefabInstance: {fileID: 2125565707}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &382593943 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7559430521452715677, guid: 10a2e5e098a5e8048a932a5a1c8667eb, type: 3}
+  m_PrefabInstance: {fileID: 4436913223069755458}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &403132105
 GameObject:
   m_ObjectHideFlags: 0
@@ -1949,7 +1954,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Checkpoint (1)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 0}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -2034,7 +2040,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Checkpoints
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 0}
     m_RemovedGameObjects: []
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 106202328482314518, guid: df215fb0cdae7844f81057e2753a7bf4, type: 3}
@@ -2094,6 +2101,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4486432858473722964, guid: 10a2e5e098a5e8048a932a5a1c8667eb, type: 3}
+      propertyPath: firePoint
+      value: 
+      objectReference: {fileID: 382593943}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

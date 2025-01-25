@@ -3,15 +3,22 @@ using UnityEngine;
 namespace Player {
     public class ChamsterSteering : MonoBehaviour, SteeringScheme {
         private Rigidbody _rigidbody;
+        private Bazooka _bazooka;
+        private Flamethrower _flamethrower;
+        
         private Camera _camera;
 
         public float forwardForce = 5f;
         public float sideForce = 5f;
         public float jumpForce = 5f;
         public float slopeForce = 10f;
+        
+        
 
         private void Start() {
             _rigidbody = GetComponent<Rigidbody>();
+            _bazooka = transform.parent.GetComponentInChildren<Bazooka>();
+            _flamethrower = transform.parent.GetComponentInChildren<Flamethrower>();
             _camera = Camera.main;
         }
 
@@ -70,6 +77,18 @@ namespace Player {
 
         public void Jump() {
             throw new System.NotImplementedException();
+        }
+
+        public void Attack1(Vector3 mousePosition) {
+            _bazooka.Shoot(_camera.ScreenToWorldPoint(mousePosition));
+        }
+
+        public void StartAttack2(Vector3 mousePosition) {
+            _flamethrower.StartFiring();
+        }
+
+        public void EndAttack2(Vector3 mousePosition) {
+            _flamethrower.StopFiring();
         }
 
         private bool CanMove() {

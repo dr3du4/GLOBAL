@@ -30,7 +30,7 @@ public class Flamethrower : MonoBehaviour
         }
     }
 
-    void StartFiring()
+    public void StartFiring()
     {
         if (!isFiring)
         {
@@ -39,7 +39,7 @@ public class Flamethrower : MonoBehaviour
         }
     }
 
-    void StopFiring()
+    public void StopFiring()
     {
         if (isFiring)
         {
