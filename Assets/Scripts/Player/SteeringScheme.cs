@@ -5,7 +5,8 @@ namespace Player {
         void Move(Vector2 direction);
         bool Interact();
         void Jump();
-        void Attack1(Vector3 mousePosition);
+        void StartAttack1();
+        void EndAttack1();
         void StartAttack2(Vector3 mousePosition);
         void EndAttack2(Vector3 mousePosition);
     }

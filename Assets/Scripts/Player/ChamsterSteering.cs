@@ -6,21 +6,21 @@ namespace Player {
         private Bazooka _bazooka;
         private Flamethrower _flamethrower;
         private Animator _animator;
+        private Crosshair _crosshair;
         
         private Camera _camera;
 
         public float moveForce = 5f;
-        public float jumpForce = 5f;
         public float slopeForce = 10f;
         
-        
-
         private void Start() {
             _rigidbody = GetComponent<Rigidbody>();
+            _crosshair = FindFirstObjectByType<Crosshair>();
             _bazooka = transform.parent.GetComponentInChildren<Bazooka>();
             _flamethrower = transform.parent.GetComponentInChildren<Flamethrower>();
             _animator = transform.GetComponentInChildren<Animator>();
             _camera = Camera.main;
+            _crosshair.Hide();
         }
 
 
@@ -49,8 +49,11 @@ namespace Player {
                 Vector3 cameraForward = _camera.transform.forward;
                 cameraForward.y = 0;
                 var forwardFactor = cameraForward * direction.y;
-                _rigidbody.AddForce((sideFactor + forwardFactor) * moveForce);
-                _animator.transform.LookAt((transform.position + sideFactor + forwardFactor));
+                var travelDirection = sideFactor + forwardFactor;
+                travelDirection.y = 0;
+                Debug.Log(travelDirection.normalized * moveForce);
+                _rigidbody.AddForce(travelDirection.normalized * moveForce);
+                _animator.transform.LookAt((transform.position + travelDirection));
                 _animator.transform.rotation = Quaternion.Euler(0, _animator.transform.rotation.eulerAngles.y - 180, 0);
             }
         }
@@ -73,11 +76,19 @@ namespace Player {
         }
 
         public void Jump() {
-            _rigidbody.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+            return;
         }
 
-        public void Attack1(Vector3 mousePosition) {
-            _bazooka.Shoot(_camera.ScreenToWorldPoint(mousePosition));
+        public void StartAttack1() {
+            _crosshair.Show();
+            _animator.transform.LookAt(_camera.ScreenToWorldPoint( new Vector3(Screen.width / 2, Screen.height / 2, _camera.nearClipPlane + 10)));
+            _animator.transform.rotation = Quaternion.Euler(0, _animator.transform.rotation.eulerAngles.y - 180, 0);
+        }
+
+        public void EndAttack1() {
+            // Pass middle of the screen to screen to world point
+            _crosshair.Hide();
+            _bazooka.Shoot(_camera.ScreenToWorldPoint( new Vector3(Screen.width / 2, Screen.height / 2, _camera.nearClipPlane + 10)));
         }
 
         public void StartAttack2(Vector3 mousePosition) {
