@@ -19,7 +19,7 @@ public class BubbleSteering : MonoBehaviour, SteeringScheme
     private void Update() {
         // If player can not move it should slide down the slope
         if (!CanMove()) {
-            _rigidbody.AddForce(Vector3.down * slopeForce);
+            _rigidbody.AddForce(Vector3.down * slopeForce, ForceMode.Acceleration);
         }
     }
 
@@ -57,14 +57,11 @@ public class BubbleSteering : MonoBehaviour, SteeringScheme
     }
 
     private bool CanMove() {
-        Collider[] colliders = GetComponents<Collider>();
-
-        foreach (var collider in colliders)
-        {
-            if (collider.CompareTag("NotForBubble")) {
-                return false;
-            }
+        // Shoot raycast to the ground to check if chamster is on the floor tagged by "NotForChamster" tag
+        RaycastHit hit;
+        if (Physics.Raycast(transform.position, Vector3.down, out hit, 3f)) {
+            return !hit.collider.CompareTag("NotForBubble");
         }
-        return true; 
+        return true;
     }
 }

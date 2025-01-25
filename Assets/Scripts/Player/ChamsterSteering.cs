@@ -1,41 +1,39 @@
 using UnityEngine;
 
 namespace Player {
-    public class ChamsterSteering : MonoBehaviour, SteeringScheme
-    {
+    public class ChamsterSteering : MonoBehaviour, SteeringScheme {
         private Rigidbody _rigidbody;
         private Camera _camera;
-    
+
         public float forwardForce = 5f;
         public float sideForce = 5f;
         public float jumpForce = 5f;
         public float slopeForce = 10f;
+
         private void Start() {
             _rigidbody = GetComponent<Rigidbody>();
             _camera = Camera.main;
         }
-        
-        
+
+
         private void Update() {
             // If player can not move it should slide down the slope
             if (!CanMove()) {
-                _rigidbody.AddForce(Vector3.down * slopeForce);
+                _rigidbody.AddForce(Vector3.down * slopeForce, ForceMode.Acceleration);
             }
         }
 
         public void Move(Vector2 direction) {
             // If player is moving on the floor tagged by "NotForChamster" tag, chamster will not move
-            Collider[] hitColliders = Physics.OverlapSphere(transform.position, 1);
-            foreach (var hit in hitColliders) {
-                if (hit.CompareTag("NotForChamster")) {
-                    return;
-                }
+            if (!CanMove()) {
+                return;
             }
-            
-            if(direction.y != 0) {
+
+            if (direction.y != 0) {
                 MoveForward(direction.y);
             }
-            if(direction.x != 0) {
+
+            if (direction.x != 0) {
                 MoveAside(direction.x);
             }
         }
@@ -62,26 +60,25 @@ namespace Player {
                     bubble = hit.GetComponent<Bubble>();
                 }
             }
-            if(bubble != null) {
+
+            if (bubble != null) {
                 return bubble.interactRange >= Vector3.Distance(bubble.transform.position, this.transform.position);
             }
+
             return false;
         }
 
         public void Jump() {
             throw new System.NotImplementedException();
         }
-        
-        private bool CanMove() {
-            Collider[] colliders = GetComponents<Collider>();
 
-            foreach (var collider in colliders)
-            {
-                if (collider.CompareTag("NotForChamster")) {
-                    return false;
-                }
+        private bool CanMove() {
+            // Shoot raycast to the ground to check if chamster is on the floor tagged by "NotForChamster" tag
+            RaycastHit hit;
+            if (Physics.Raycast(transform.position, Vector3.down, out hit, 3f)) {
+                return !hit.collider.CompareTag("NotForChamster");
             }
-            return true; 
+            return true;
         }
     }
 }
