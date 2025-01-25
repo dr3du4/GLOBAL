@@ -10,6 +10,9 @@ namespace Player {
         public SteeringScheme CurrentSteeringScheme => _currentSteeringScheme;
 
         PlayerInput _input;
+        private void OnJump(InputAction.CallbackContext obj) {
+            _currentSteeringScheme.Jump();
+        } 
         void Start() {
             _input = GetComponent<PlayerInput>();
             _steeringModeManager = GetComponent<SteeringModeManager>();
@@ -38,11 +41,6 @@ namespace Player {
                 _currentSteeringScheme.Move(_input.actions["Move"].ReadValue<Vector2>());
             }
         }
-
-        private void OnJump(InputAction.CallbackContext obj) {
-            _currentSteeringScheme.Jump();
-        } 
-
         public void OnInteraction(InputAction.CallbackContext obj) {
             if (_currentSteeringScheme.Interact()) {
                 _steeringModeManager.SwitchSteeringMode();
