@@ -32,7 +32,7 @@ public class CameraFollow : MonoBehaviour
         }
 
         // Obsługa obrotu kamery myszką góra/dół
-        if (Input.GetMouseButton(0)) // Lewy przycisk myszy
+        if (Input.GetMouseButton(2)) // Lewy przycisk myszy
         {
             float mouseX = Input.GetAxis("Mouse X") * rotationSpeed * Time.deltaTime;
             float mouseY = Input.GetAxis("Mouse Y") * rotationSpeed * Time.deltaTime;
@@ -57,4 +57,9 @@ public class CameraFollow : MonoBehaviour
         transform.position = position;
         transform.LookAt(target);
     }
+    
+    public void SetTarget(Transform newTarget)
+    {
+        this.target = newTarget;
+    } 
 }
