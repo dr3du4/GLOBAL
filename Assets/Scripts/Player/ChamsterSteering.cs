@@ -9,9 +9,18 @@ namespace Player {
         public float forwardForce = 5f;
         public float sideForce = 5f;
         public float jumpForce = 5f;
+        public float slopeForce = 10f;
         private void Start() {
             _rigidbody = GetComponent<Rigidbody>();
             _camera = Camera.main;
+        }
+        
+        
+        private void Update() {
+            // If player can not move it should slide down the slope
+            if (!CanMove()) {
+                _rigidbody.AddForce(Vector3.down * slopeForce);
+            }
         }
 
         public void Move(Vector2 direction) {
@@ -61,6 +70,17 @@ namespace Player {
 
         public void Jump() {
             throw new System.NotImplementedException();
+        }
+        
+        private bool CanMove() {
+            // Return false if player walks over the floor tagged by "NotForBubble" tag. It should maximaly accurate
+            Collider[] hitColliders = Physics.OverlapSphere(transform.position, 1);
+            foreach (var hit in hitColliders) {
+                if (hit.CompareTag("NotForChamster")) {
+                    return false;
+                }
+            }
+            return true;
         }
     }
 }
