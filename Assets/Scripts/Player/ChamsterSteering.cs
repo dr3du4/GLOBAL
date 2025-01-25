@@ -73,7 +73,7 @@ namespace Player {
         }
 
         public void Jump() {
-            throw new System.NotImplementedException();
+            _rigidbody.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
         }
 
         public void Attack1(Vector3 mousePosition) {
