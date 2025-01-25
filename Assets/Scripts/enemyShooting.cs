@@ -4,7 +4,7 @@ public class enemyShooting : MonoBehaviour
 {
     public Transform firePoint; // Punkt, z którego strzela przeciwnik
     public GameObject projectilePrefab; // Prefab pocisku
-    public float fireRate = 0.1f; // Czas pomiędzy strzałami (w sekundach)
+    public float fireRate = 1f; // Czas pomiędzy strzałami (w sekundach)
     public string playerTag = "Player"; // Tag gracza
     public Transform playerTransform; // Referencja do gracza (ustawiona w inspektorze)
 
@@ -40,7 +40,7 @@ public class enemyShooting : MonoBehaviour
         {
             Vector3 direction = (playerTransform.position - transform.position).normalized;
             Quaternion lookRotation = Quaternion.LookRotation(new Vector3(direction.x, 0, direction.z));
-            transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * 5f); // Płynny obrót
+            transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * 10f); // Płynny obrót
         }
 
         // Jeśli gracz jest w zasięgu i czas do następnego strzału minął, strzel
