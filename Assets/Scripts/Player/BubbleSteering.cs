@@ -11,6 +11,7 @@ public class BubbleSteering : MonoBehaviour, SteeringScheme
     public float moveForce = 5f;
     public float jumpForce = 5f;
     public float slopeForce = 10f;
+    [SerializeField] private float touchingFloorLength = 3f;
     private void Start() {
         _rigidbody = GetComponent<Rigidbody>();
         _camera = Camera.main;
@@ -37,8 +38,10 @@ public class BubbleSteering : MonoBehaviour, SteeringScheme
             Vector3 cameraForward = _camera.transform.forward;
             cameraForward.y = 0;
             var forwardFactor = cameraForward * direction.y;
-            _rigidbody.AddForce((sideFactor + forwardFactor) * moveForce);
-            _animator.transform.LookAt((transform.position + sideFactor + forwardFactor));
+            var travelDirection = sideFactor + forwardFactor;
+            travelDirection.y = 0;
+            _rigidbody.AddForce(travelDirection.normalized * moveForce);
+            _animator.transform.LookAt((transform.position + travelDirection));
             _animator.transform.rotation = Quaternion.Euler(0, _animator.transform.rotation.eulerAngles.y - 180, 0);
         }
     }
@@ -51,10 +54,20 @@ public class BubbleSteering : MonoBehaviour, SteeringScheme
     }
 
     public void Jump() {
-        _rigidbody.AddForce(transform.up * jumpForce, ForceMode.Impulse);
+        RaycastHit hit;
+        if (!Physics.Raycast(transform.position, Vector3.down, out hit, touchingFloorLength)) {
+            Debug.Log("Detected not touching the floor");
+            return;
+        }
+        Debug.Log("Performing jump");
+        _rigidbody.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
     }
 
-    public void Attack1(Vector3 mousePosition) {
+    public void StartAttack1() {
+        return;
+    }
+
+    public void EndAttack1() {
         return;
     }
 
@@ -73,5 +86,11 @@ public class BubbleSteering : MonoBehaviour, SteeringScheme
             return !hit.collider.CompareTag("NotForBubble");
         }
         return true;
+    }
+    
+    // Draw gizmos for raycast
+    private void OnDrawGizmos() {
+        Gizmos.color = Color.red;
+        Gizmos.DrawRay(transform.position, Vector3.down * touchingFloorLength);
     }
 }

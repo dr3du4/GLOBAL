@@ -7,19 +7,24 @@ namespace Player {
         SteeringScheme _currentSteeringScheme;
         SteeringModeManager _steeringModeManager;
 
+        private bool _isAttack1InProgress = false;
+
         public SteeringScheme CurrentSteeringScheme => _currentSteeringScheme;
 
         PlayerInput _input;
-        private void OnJump(InputAction.CallbackContext obj) {
+        public void OnJumpKey(InputAction.CallbackContext obj) {
+            Debug.Log("Jump key pressed!");
             _currentSteeringScheme.Jump();
         } 
         void Start() {
             _input = GetComponent<PlayerInput>();
             _steeringModeManager = GetComponent<SteeringModeManager>();
             RegisterPlayerInput();
+            _isAttack1InProgress = false;
         }
         void FixedUpdate() {
             CheckIfPlayerMoved();
+            CheckAttack1Conditions();
             CheckIfPlayerAttack2();
         }
 
@@ -47,9 +52,9 @@ namespace Player {
             }
         }
         
-        public void OnAttack1(InputAction.CallbackContext obj) {
-            _currentSteeringScheme.Attack1(_input.actions["Look"].ReadValue<Vector2>());
-        }
+        // public void OnAttack1(InputAction.CallbackContext obj) {
+        //     _currentSteeringScheme.Attack1(_input.actions["Look"].ReadValue<Vector2>());
+        // }
         
         public void OnAttack2() {
             // Debug.Log("Started fire!");
@@ -62,9 +67,21 @@ namespace Player {
         }
     
         private void RegisterPlayerInput() {
-            _input.actions["Jump"].performed += OnJump;
+            _input.actions["Jump"].performed += OnJumpKey;
             _input.actions["Interact"].performed += OnInteraction;
-            _input.actions["Attack_1"].performed += OnAttack1;
+        }
+
+        private void CheckAttack1Conditions() {
+            if(_input.actions["Attack_1"].IsPressed()) {
+                _isAttack1InProgress = true;
+                _currentSteeringScheme.StartAttack1();
+            }
+            else {
+                if (_isAttack1InProgress == true) {
+                    _currentSteeringScheme.EndAttack1();
+                    _isAttack1InProgress = false;
+                }
+            }
         }
     }
 }
