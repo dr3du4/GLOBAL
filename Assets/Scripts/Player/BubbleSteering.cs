@@ -56,6 +56,18 @@ public class BubbleSteering : MonoBehaviour, SteeringScheme
         _rigidbody.AddForce(transform.up * jumpForce, ForceMode.Impulse);
     }
 
+    public void Attack1(Vector3 mousePosition) {
+        return;
+    }
+
+    public void StartAttack2(Vector3 mousePosition) {
+        return;
+    }
+
+    public void EndAttack2(Vector3 mousePosition) {
+        return;
+    }
+    
     private bool CanMove() {
         // Shoot raycast to the ground to check if chamster is on the floor tagged by "NotForChamster" tag
         RaycastHit hit;

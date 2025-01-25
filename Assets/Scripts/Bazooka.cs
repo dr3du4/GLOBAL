@@ -11,25 +11,21 @@ public class Bazooka : MonoBehaviour
 
     private bool canShoot = true;
 
-    void Update()
+    public void Shoot(Vector3 WorldPointTarget)
     {
-        // Strzał z bazooki
-        if (Input.GetKey(KeyCode.U) && canShoot)
-        {
-            Shoot();
+        Debug.Log("Attempt to shoot");
+        if (canShoot == false) {
+            return;
         }
-    }
-
-    void Shoot()
-    {
+        Debug.Log("Shots should be fired");
         // Tworzenie pocisku
         GameObject projectile = Instantiate(projectilePrefab, firePoint.position, firePoint.rotation);
         Rigidbody rb = projectile.GetComponent<Rigidbody>();
 
         if (rb != null)
         {
-            // Nadanie pociskowi siły w kierunku osi Z (przód bazooki)
-            rb.linearVelocity = firePoint.forward * fireForce;
+            // Nadanie pociskowi siły w podanego punktu w świecie
+            rb.linearVelocity = (WorldPointTarget - firePoint.position).normalized * fireForce;
         }
 
         // Rozpoczęcie czasu przeładowania
@@ -39,7 +35,9 @@ public class Bazooka : MonoBehaviour
     IEnumerator Reload()
     {
         canShoot = false;
+        Debug.Log("Realod started");
         yield return new WaitForSeconds(reloadTime);
         canShoot = true;
+        Debug.Log("Reload Done");
     }
 }
