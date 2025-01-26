@@ -72,6 +72,12 @@ public class Flamethrower : MonoBehaviour
 
         foreach (var hitCollider in hitColliders)
         {
+            // Ignoruj collider, jeśli nie jest typu CapsuleCollider
+            if (!(hitCollider is CapsuleCollider))
+            {
+                continue;
+            }
+
             Debug.Log("Trafiono obiekt: " + hitCollider.name); // Wyświetla nazwę trafionego obiektu
 
             // Zadaj obrażenia, jeśli obiekt ma komponent "Enemy"
