@@ -8,6 +8,8 @@ namespace Player {
         SteeringScheme _currentSteeringScheme;
         SteeringModeManager _steeringModeManager;
         CheckpointManager _checkpointManager;
+        private int _numberOfHits = 0;
+        [SerializeField] private int _maxNumberOfHits = 3;
 
         private bool _isAttack1InProgress = false;
 
@@ -24,6 +26,14 @@ namespace Player {
         
         public void OnPause(InputAction.CallbackContext obj) {
 
+        }
+
+        public void GotHit() {
+            _numberOfHits++;
+            if (_numberOfHits >= _maxNumberOfHits) {
+                _checkpointManager.SpawnPlayerOnLastCheckpoint();
+                _numberOfHits = 0;
+            }
         }
         void Start() {
             _input = GetComponent<PlayerInput>();

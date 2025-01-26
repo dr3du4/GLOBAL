@@ -91,7 +91,11 @@ public class BubbleSteering : MonoBehaviour, SteeringScheme
     public void EndAttack2(Vector3 mousePosition) {
         return;
     }
-    
+
+    public void GotHit() {
+        return;
+    }
+
     private bool CanMove() {
         // Shoot raycast to the ground to check if chamster is on the floor tagged by "NotForChamster" tag
         RaycastHit hit;
@@ -105,5 +109,12 @@ public class BubbleSteering : MonoBehaviour, SteeringScheme
     private void OnDrawGizmos() {
         Gizmos.color = Color.red;
         Gizmos.DrawRay(transform.position, Vector3.down * touchingFloorLength);
+    }
+
+    private void OnTriggerEnter(Collider other) {
+        if (other.CompareTag("Bullet")) {
+            Destroy(other);
+            return;
+        }
     }
 }
