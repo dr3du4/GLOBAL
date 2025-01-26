@@ -15,6 +15,7 @@ public class menuSecond : MonoBehaviour
     public void StartGame()
     {
         mainMenuPanel.gameObject.SetActive(false);
+        Debug.Log("Quitsadasdasdasdasd Game");
     }
 
     public void QuitGame()
@@ -25,7 +26,7 @@ public class menuSecond : MonoBehaviour
     }
 
     public void OpenSettings()
-    {
+    {Debug.Log("Q22222 Game");
         // Pokaż panel ustawień i ukryj menu główne
         if (settingsPanel != null && mainMenuPanel != null)
         {
@@ -35,7 +36,7 @@ public class menuSecond : MonoBehaviour
     }
 
     public void CloseSettings()
-    {
+    {Debug.Log("Q121212 Game");
         // Ukryj panel ustawień i pokaż menu główne
         if (settingsPanel != null && mainMenuPanel != null)
         {
