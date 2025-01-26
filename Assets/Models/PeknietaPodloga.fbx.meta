@@ -3,7 +3,12 @@ guid: dbde523b2c7f223489208d24cfcca1f9
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Wafelek
+    second: {fileID: 2100000, guid: 4818abd5749bf174ebcdef8551698897, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

@@ -3,7 +3,12 @@ guid: cb215395979c9794f8ed1cf42391838d
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Krakers.001
+    second: {fileID: 2100000, guid: 4f95372c3c89ebd48bca6c0c55e28331, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
