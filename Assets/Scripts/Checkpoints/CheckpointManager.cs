@@ -25,6 +25,7 @@ namespace Checkpoints {
         }
 
         public void SpawnPlayerOnLastCheckpoint() {
+            soundPlay();
             _playerManager.SpawnPlayer(_positionToSpawn, _rotationToSpawn);
         }
 
