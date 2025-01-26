@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 // Skrypt obsługujący pocisk
@@ -12,17 +13,19 @@ public class Projectile : MonoBehaviour
         Destroy(gameObject, lifetime);
     }
 
-   void OnCollisionEnter(Collision collision)
-    {
+    private void OnTriggerEnter(Collider other) {
+        if (other.CompareTag("Player")) {
+            return;
+        }
         // Sprawdzenie kolizji i uruchomienie efektu eksplozji
         if (explosionEffect != null)
         {
             Instantiate(explosionEffect, transform.position, Quaternion.identity);
         }
 
-        if (collision.gameObject.tag == "Enemy")
+        if (other.CompareTag("Enemy"))
         {
-            collision.gameObject.GetComponent<Enemy>().TakeDamage(damage);
+            other.GetComponent<Enemy>().TakeDamage(damage);
         }
 
         // Zniszczenie pocisku
