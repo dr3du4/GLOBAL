@@ -49,7 +49,9 @@ public class BubbleSteering : MonoBehaviour, SteeringScheme
         }
     }
     private void UpdateAnimatorVars() {
-        _animator.SetFloat("Speed", _rigidbody.linearVelocity.magnitude);
+        var velocity = _rigidbody.linearVelocity;
+        velocity.y = 0;
+        _animator.SetFloat("Speed", velocity.magnitude);
         if (_rigidbody.linearVelocity.magnitude > 0.1f && !_chamsterWalking.isPlaying) {
             _chamsterWalking.Play();
         } else if (_rigidbody.linearVelocity.magnitude < 0.1f && _chamsterWalking.isPlaying) {
