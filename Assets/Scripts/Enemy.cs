@@ -10,10 +10,10 @@ public class Enemy : MonoBehaviour
    public void TakeDamage(float damage)
    {
       health -= damage;
-      /*if (audioSource != null && damageSound != null)
+      if (audioSource != null && damageSound != null)
       {
          audioSource.PlayOneShot(damageSound); // Graj dźwięk strzału
-      }*/
+      }
       if (health <= 0)
       {
          Die();

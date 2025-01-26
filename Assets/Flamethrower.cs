@@ -10,7 +10,7 @@ public class Flamethrower : MonoBehaviour
     public GameObject luffa;
     private bool isFiring = false;
     public Transform target; // Obiekt, który system cząsteczek ma śledzić (np. broń)
-    
+    public AudioSource fireSound;  
 
     void LateUpdate()
     {
@@ -24,16 +24,16 @@ public class Flamethrower : MonoBehaviour
 
     void Update()
     {
-        // // Włącz/wyłącz ogień
-        // if (Input.GetMouseButton(0)) // LPM do aktywacji
-        // {
-        //     StartFiring();
-        // }
-        // else
-        // {
-        //     StopFiring();
-        // }
-
+      /*  // // Włącz/wyłącz ogień
+        if (Input.GetMouseButton(0)) // LPM do aktywacji
+        {
+             StartFiring();
+        }
+        else
+        {
+             StopFiring();
+        }
+*/
         // Zadaj obrażenia w trakcie strzelania
         if (isFiring)
         {
@@ -45,7 +45,9 @@ public class Flamethrower : MonoBehaviour
     {
         if (!isFiring)
         {
-            fireEffect.Play(); // Uruchom cząsteczki
+            fireEffect.Play(); 
+            fireSound.loop = true; // Ustawienie dźwięku w pętli
+            fireSound.Play();      // Rozpocznij odtwarzanie
             isFiring = true;
         }
     }
@@ -55,6 +57,9 @@ public class Flamethrower : MonoBehaviour
         if (isFiring)
         {
             fireEffect.Stop(); // Zatrzymaj cząsteczki
+           
+            fireSound.Stop(); // Zatrzymaj odtwarzanie dźwięku
+            
             isFiring = false;
         }
     }
