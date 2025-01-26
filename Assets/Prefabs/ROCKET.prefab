@@ -151,4 +151,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lifetime: 20
   explosionEffect: {fileID: 1294734016097134424, guid: c274cd12dca1d624595c52625b4d6e4a, type: 3}
-  damage: 10
+  damage: 500
