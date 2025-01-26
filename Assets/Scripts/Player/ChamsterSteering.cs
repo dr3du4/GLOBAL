@@ -111,7 +111,7 @@ namespace Player {
         private bool CanMove() {
             // Shoot raycast to the ground to check if chamster is on the floor tagged by "NotForChamster" tag
             RaycastHit hit;
-            if (Physics.Raycast(transform.position, Vector3.down, out hit, 3f)) {
+            if (Physics.Raycast(transform.position, Vector3.down, out hit, 4f)) {
                 return !hit.collider.CompareTag("NotForChamster");
             }
             return true;

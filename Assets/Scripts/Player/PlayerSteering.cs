@@ -31,6 +31,8 @@ namespace Player {
             _checkpointManager = FindFirstObjectByType<CheckpointManager>();
             RegisterPlayerInput();
             _isAttack1InProgress = false;
+            // Set up CursorLockMode.Locked
+            Cursor.lockState = CursorLockMode.Locked;
         }
         void FixedUpdate() {
             CheckIfPlayerMoved();
