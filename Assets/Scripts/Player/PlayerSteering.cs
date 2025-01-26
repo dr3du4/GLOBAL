@@ -8,6 +8,7 @@ namespace Player {
         SteeringScheme _currentSteeringScheme;
         SteeringModeManager _steeringModeManager;
         CheckpointManager _checkpointManager;
+        public GameObject _pauseMenu;
         private int _numberOfHits = 0;
         [SerializeField] private int _maxNumberOfHits = 3;
 
@@ -24,8 +25,8 @@ namespace Player {
             _checkpointManager.SpawnPlayerOnLastCheckpoint();
         }
         
-        public void OnPause(InputAction.CallbackContext obj) {
-
+        public void OnPauseDemand(InputAction.CallbackContext obj) {
+            _pauseMenu.SetActive(!_pauseMenu.activeSelf);
         }
 
         public void GotHit() {
@@ -91,7 +92,7 @@ namespace Player {
         private void RegisterPlayerInput() {
             _input.actions["Jump"].performed += OnJumpKey;
             _input.actions["Interact"].performed += OnInteraction;
-            _input.actions["Pause"].performed += OnPause;
+            // _input.actions["Pause"].performed += OnPauseDemand;
             _input.actions["Restart"].performed += OnRestartDemand;
         }
 
