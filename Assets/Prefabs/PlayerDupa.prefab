@@ -127,7 +127,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveForce: 300
   jumpForce: 50
-  slopeForce: 10
+  slopeForce: 300000
   touchingFloorLength: 1.17
   _leavingTheBubble: {fileID: 6171260967879501731}
   _chamsterWalking: {fileID: 2608282936700735649}
@@ -706,7 +706,7 @@ MonoBehaviour:
   _joiningTheBubble: {fileID: 2305734485511004382}
   _chamsterWalking: {fileID: 5437840539649133412}
   moveForce: 300
-  slopeForce: 45000
+  slopeForce: 10000000
 --- !u!54 &8431809076419353081
 Rigidbody:
   m_ObjectHideFlags: 0
