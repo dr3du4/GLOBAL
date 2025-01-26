@@ -9,5 +9,6 @@ namespace Player {
         void EndAttack1();
         void StartAttack2(Vector3 mousePosition);
         void EndAttack2(Vector3 mousePosition);
+        void GotHit();
     }
 }
