@@ -34,7 +34,7 @@ namespace Player {
             _bubble.SetActive(false);
             _chamster.SetActive(false);
             _playerSteering.SwitchSteeringScheme(_bubbleSteering);
-            Camera.main.GetComponent<CinemachineCamera>().Follow = _chamsterBubble.transform;
+            Camera.main.GetComponent<CinemachineCamera>().Follow = _chamsterBubbleRig.transform;
         } 
     
         private void SwitchSteeringToChamster() {

@@ -81,14 +81,14 @@ namespace Player {
 
         public void StartAttack1() {
             _crosshair.Show();
-            _animator.transform.LookAt(_camera.ScreenToWorldPoint( new Vector3(Screen.width / 2, Screen.height / 2, _camera.nearClipPlane + 10)));
+            _animator.transform.LookAt(_camera.ScreenToWorldPoint( new Vector3(Screen.width / 2.0f, Screen.height / 2.0f, _camera.nearClipPlane + 20))); //_camera.nearClipPlane + 10)));
             _animator.transform.rotation = Quaternion.Euler(0, _animator.transform.rotation.eulerAngles.y - 180, 0);
         }
 
         public void EndAttack1() {
             // Pass middle of the screen to screen to world point
             _crosshair.Hide();
-            _bazooka.Shoot(_camera.ScreenToWorldPoint( new Vector3(Screen.width / 2, Screen.height / 2, _camera.nearClipPlane + 10)));
+            _bazooka.Shoot(_camera.ScreenToWorldPoint(new Vector3(Screen.width / 2.0f, Screen.height / 2.0f, _camera.nearClipPlane + 20))); //_camera.nearClipPlane + 10)));
         }
 
         public void StartAttack2(Vector3 mousePosition) {
