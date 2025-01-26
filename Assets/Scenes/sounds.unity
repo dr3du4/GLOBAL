@@ -13785,44 +13785,15 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 948162730973340292, guid: df215fb0cdae7844f81057e2753a7bf4, type: 3}
-      propertyPath: m_PlayOnAwake
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2798386542464678730, guid: df215fb0cdae7844f81057e2753a7bf4, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -33.16
-      objectReference: {fileID: 0}
-    - target: {fileID: 2798386542464678730, guid: df215fb0cdae7844f81057e2753a7bf4, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -13.22
-      objectReference: {fileID: 0}
-    - target: {fileID: 3165877232635124130, guid: df215fb0cdae7844f81057e2753a7bf4, type: 3}
-      propertyPath: checkSound
-      value: 
-      objectReference: {fileID: 8300000, guid: 68245936454de3b43a251e2a4fb92b38, type: 3}
-    - target: {fileID: 3165877232635124130, guid: df215fb0cdae7844f81057e2753a7bf4, type: 3}
-      propertyPath: audioSource
-      value: 
-      objectReference: {fileID: 747774998}
     - target: {fileID: 3619980199451926297, guid: df215fb0cdae7844f81057e2753a7bf4, type: 3}
       propertyPath: m_Name
       value: Checkpoints
       objectReference: {fileID: 0}
-    - target: {fileID: 7077942458705942894, guid: df215fb0cdae7844f81057e2753a7bf4, type: 3}
-      propertyPath: m_Mesh
-      value: 
-      objectReference: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: df215fb0cdae7844f81057e2753a7bf4, type: 3}
---- !u!82 &747774998 stripped
-AudioSource:
-  m_CorrespondingSourceObject: {fileID: 948162730973340292, guid: df215fb0cdae7844f81057e2753a7bf4, type: 3}
-  m_PrefabInstance: {fileID: 747774997}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &750144210
 GameObject:
   m_ObjectHideFlags: 0
