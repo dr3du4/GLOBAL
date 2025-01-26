@@ -8,6 +8,7 @@ TagManager:
   - NotForChamster
   - NotForBubble
   - Checkpoint
+  - Enemy
   layers:
   - Default
   - TransparentFX
