@@ -49,8 +49,8 @@ MonoBehaviour:
   endLevel:
     m_PersistentCalls:
       m_Calls: []
-  audioSource: {fileID: 0}
-  checkSound: {fileID: 0}
+  audioSource: {fileID: 948162730973340292}
+  checkSound: {fileID: 8300000, guid: 68245936454de3b43a251e2a4fb92b38, type: 3}
 --- !u!82 &948162730973340292
 AudioSource:
   m_ObjectHideFlags: 0
@@ -63,7 +63,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 68245936454de3b43a251e2a4fb92b38, type: 3}
   m_Resource: {fileID: 8300000, guid: 68245936454de3b43a251e2a4fb92b38, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -158,7 +158,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5447767066494838169, guid: 5f21eb6cdc326b5439f0e261cb3db049, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -33.16
       objectReference: {fileID: 0}
     - target: {fileID: 5447767066494838169, guid: 5f21eb6cdc326b5439f0e261cb3db049, type: 3}
       propertyPath: m_LocalPosition.y
@@ -166,7 +166,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5447767066494838169, guid: 5f21eb6cdc326b5439f0e261cb3db049, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -13.22
       objectReference: {fileID: 0}
     - target: {fileID: 5447767066494838169, guid: 5f21eb6cdc326b5439f0e261cb3db049, type: 3}
       propertyPath: m_LocalRotation.w

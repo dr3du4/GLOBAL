@@ -7,6 +7,8 @@ namespace Player {
         private Flamethrower _flamethrower;
         private Animator _animator;
         private Crosshair _crosshair;
+        [SerializeField] private AudioSource _joiningTheBubble;
+        [SerializeField] private AudioSource _chamsterWalking;
         
         private Camera _camera;
 
@@ -34,6 +36,11 @@ namespace Player {
         
         private void UpdateAnimatorVars() {
             _animator.SetFloat("Speed", _rigidbody.linearVelocity.magnitude);
+            if (_rigidbody.linearVelocity.magnitude > 0.1f && !_chamsterWalking.isPlaying) {
+                _chamsterWalking.Play();
+            } else if (_rigidbody.linearVelocity.magnitude < 0.1f && _chamsterWalking.isPlaying) {
+                _chamsterWalking.Stop();
+            }
         }
 
         public void Move(Vector2 direction) {
@@ -69,9 +76,11 @@ namespace Player {
             }
 
             if (bubble != null) {
-                return bubble.interactRange >= Vector3.Distance(bubble.transform.position, this.transform.position);
+                if (bubble.interactRange >= Vector3.Distance(bubble.transform.position, this.transform.position)) {
+                    _joiningTheBubble.Play();
+                    return true;
+                }
             }
-
             return false;
         }
 

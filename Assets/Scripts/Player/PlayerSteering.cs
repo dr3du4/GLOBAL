@@ -1,3 +1,4 @@
+using Checkpoints;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -6,6 +7,7 @@ namespace Player {
     {
         SteeringScheme _currentSteeringScheme;
         SteeringModeManager _steeringModeManager;
+        CheckpointManager _checkpointManager;
 
         private bool _isAttack1InProgress = false;
 
@@ -16,9 +18,17 @@ namespace Player {
             Debug.Log("Jump key pressed!");
             _currentSteeringScheme.Jump();
         } 
+        public void OnRestartDemand(InputAction.CallbackContext obj) {
+            _checkpointManager.SpawnPlayerOnLastCheckpoint();
+        }
+        
+        public void OnPause(InputAction.CallbackContext obj) {
+
+        }
         void Start() {
             _input = GetComponent<PlayerInput>();
             _steeringModeManager = GetComponent<SteeringModeManager>();
+            _checkpointManager = FindFirstObjectByType<CheckpointManager>();
             RegisterPlayerInput();
             _isAttack1InProgress = false;
         }
@@ -69,6 +79,8 @@ namespace Player {
         private void RegisterPlayerInput() {
             _input.actions["Jump"].performed += OnJumpKey;
             _input.actions["Interact"].performed += OnInteraction;
+            _input.actions["Pause"].performed += OnPause;
+            _input.actions["Restart"].performed += OnRestartDemand;
         }
 
         private void CheckAttack1Conditions() {
