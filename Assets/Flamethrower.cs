@@ -14,25 +14,25 @@ public class Flamethrower : MonoBehaviour
 
     void LateUpdate()
     {
-        if (target != null)
-        {
-           
-            var vector=new Vector3(180f, 0f, 0f); 
-            fireEffect.transform.rotation = target.rotation* Quaternion.Euler(0, 180, 0);
-        }
+        // if (target != null)
+        // {
+        //    
+        //     var vector=new Vector3(180f, 0f, 0f); 
+        //     fireEffect.transform.rotation = target.rotation* Quaternion.Euler(0, 180, 0);
+        // }
     }
 
     void Update()
     {
-        // Włącz/wyłącz ogień
-        if (Input.GetMouseButton(0)) // LPM do aktywacji
-        {
-            StartFiring();
-        }
-        else
-        {
-            StopFiring();
-        }
+        // // Włącz/wyłącz ogień
+        // if (Input.GetMouseButton(0)) // LPM do aktywacji
+        // {
+        //     StartFiring();
+        // }
+        // else
+        // {
+        //     StopFiring();
+        // }
 
         // Zadaj obrażenia w trakcie strzelania
         if (isFiring)
