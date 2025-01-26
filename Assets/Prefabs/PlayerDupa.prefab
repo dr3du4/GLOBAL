@@ -18,7 +18,7 @@ GameObject:
   - component: {fileID: 2608282936700735649}
   - component: {fileID: 970770369905423017}
   m_Layer: 0
-  m_Name: ChamsterInBubble
+  m_Name: PhysicChamsterInBubble
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
