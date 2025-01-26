@@ -56,8 +56,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7072372868120895715}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.000000029802319, y: 0.000000020595492, z: -0.000000007027782, w: 1}
-  m_LocalPosition: {x: 0, y: -2.3768294, z: 7.2553434}
+  m_LocalRotation: {x: 0.038016837, y: 0.000000048513105, z: -0.000000018641737, w: 0.9992771}
+  m_LocalPosition: {x: -50.5, y: -1.0406839, z: 2.4155138}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -120,7 +120,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7383033195487140554}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.1636801, y: -0.000000009692136, z: 0.0000000016080974, w: 0.9865135}
+  m_LocalRotation: {x: 0.16367888, y: 0, z: 0, w: 0.9865137}
   m_LocalPosition: {x: 68.99, y: 15.59, z: -8.73}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -128,7 +128,7 @@ Transform:
   - {fileID: 6706292074789464125}
   - {fileID: 5254501428365847401}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 18.841, y: 0, z: 0}
 --- !u!1 &8001939172830248556
 GameObject:
   m_ObjectHideFlags: 0
@@ -161,8 +161,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8001939172830248556}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: 0.03801678, y: 0.000000048513105, z: -0.000000018641732, w: 0.9992772}
+  m_LocalPosition: {x: -50.5, y: -1.0406839, z: 2.4155138}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -240,8 +240,8 @@ MonoBehaviour:
       Radius: 7
       Height: 5
     Bottom:
-      Radius: 4
-      Height: 2
+      Radius: 2.5
+      Height: 0.7
     SplineCurvature: 0.5
   RecenteringTarget: 2
   HorizontalAxis:
@@ -296,7 +296,7 @@ MonoBehaviour:
       Size: {x: 0.8, y: 0.8}
       Offset: {x: 0, y: 0}
   CenterOnActivate: 0
-  TargetOffset: {x: 0, y: 0.1, z: 0}
+  TargetOffset: {x: 0, y: 2, z: 0}
   Damping: {x: 0.2, y: 0.2}
   Lookahead:
     Enabled: 0
@@ -498,7 +498,7 @@ MonoBehaviour:
     MinimumOcclusionTime: 0
     CameraRadius: 0.4
     UseFollowTarget:
-      Enabled: 1
+      Enabled: 0
       YOffset: 0
     Strategy: 0
     MaximumEffort: 4
