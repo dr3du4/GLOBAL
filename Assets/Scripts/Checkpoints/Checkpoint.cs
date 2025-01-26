@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace Checkpoints {
@@ -10,7 +12,8 @@ namespace Checkpoints {
         public bool IsFinalCheckpoint => isFinalCheckpoint;
         public Quaternion RotationToSpawn => rotationToSpawn;
         private CheckpointManager _checkpointManager;
-
+       
+        
         private void Start() {
             _checkpointManager = transform.parent.GetComponent<CheckpointManager>();
             if(positionToSpawn == Vector3.zero) {
@@ -21,13 +24,16 @@ namespace Checkpoints {
             }
         }
         
-        private void DeleteCheckpoint() {
-            Destroy(gameObject);
+        private void DeleteCheckpoint()
+        {
+           Destroy(gameObject); // Zniszcz obiekt
+           _checkpointManager.soundPlay();
         }
         private void OnTriggerEnter(Collider other) {
             if (!other.CompareTag("Player")) {
                 return;
             }
+            
             _checkpointManager.CheckpointReached(this);
             DeleteCheckpoint();
         }

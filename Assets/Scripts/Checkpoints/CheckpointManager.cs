@@ -10,7 +10,8 @@ namespace Checkpoints {
         private Quaternion _rotationToSpawn;
         public UnityEvent endLevel;
         private PlayerManager _playerManager;
-
+        public AudioSource audioSource; // Referencja do AudioSource
+        public AudioClip checkSound; // Dźwięk strzału
         private void Start() {
             _playerManager = FindFirstObjectByType<PlayerManager>(FindObjectsInactive.Include);
         }
@@ -25,6 +26,11 @@ namespace Checkpoints {
 
         public void SpawnPlayerOnLastCheckpoint() {
             _playerManager.SpawnPlayer(_positionToSpawn, _rotationToSpawn);
+        }
+
+        public void soundPlay()
+        {
+            audioSource.PlayOneShot(checkSound); 
         }
 }
 }

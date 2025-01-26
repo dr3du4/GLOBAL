@@ -12,6 +12,8 @@ public class enemyShooting : MonoBehaviour
     private float nextFireTime = 0f; // Czas do następnego strzału
     private Vector3 targetPosition; // Pozycja gracza w momencie strzału
     public float bulletSpeed = 10f;
+    public AudioSource audioSource; // Referencja do AudioSource
+    public AudioClip shootSound; // Dźwięk strzału
     void OnTriggerEnter(Collider other)
     {
         // Sprawdź, czy obiekt, który wszedł w trigger, to gracz
@@ -64,6 +66,10 @@ public class enemyShooting : MonoBehaviour
         // Zróbmy instancję kuli
         GameObject bullet = Instantiate(projectilePrefab, transform.position + transform.forward, Quaternion.identity);
 
+        if (audioSource != null && shootSound != null)
+        {
+            audioSource.PlayOneShot(shootSound); // Graj dźwięk strzału
+        }
         // Dodajemy siłę do kuli, aby leciała w kierunku gracza
         Rigidbody rb = bullet.GetComponent<Rigidbody>();
         if (rb != null)
