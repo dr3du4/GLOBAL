@@ -7,6 +7,7 @@ namespace Player {
         private Flamethrower _flamethrower;
         private Animator _animator;
         private Crosshair _crosshair;
+        private PlayerSteering _playerSteering;
         [SerializeField] private AudioSource _joiningTheBubble;
         [SerializeField] private AudioSource _chamsterWalking;
         
@@ -16,6 +17,7 @@ namespace Player {
         public float slopeForce = 10f;
         
         private void Start() {
+            _playerSteering = GameObject.FindFirstObjectByType<PlayerSteering>();
             _rigidbody = GetComponent<Rigidbody>();
             _crosshair = FindFirstObjectByType<Crosshair>();
             _bazooka = transform.parent.GetComponentInChildren<Bazooka>();
@@ -108,6 +110,10 @@ namespace Player {
             _flamethrower.StopFiring();
         }
 
+        public void GotHit() {
+            _playerSteering.GotHit();
+        }
+
         private bool CanMove() {
             // Shoot raycast to the ground to check if chamster is on the floor tagged by "NotForChamster" tag
             RaycastHit hit;
@@ -115,6 +121,13 @@ namespace Player {
                 return !hit.collider.CompareTag("NotForChamster");
             }
             return true;
+        }
+        
+        private void OnTriggerEnter(Collider other) {
+            if (other.CompareTag("Bullet")) {
+                Destroy(other);
+                GotHit();
+            }
         }
     }
 }

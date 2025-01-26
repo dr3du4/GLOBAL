@@ -569,10 +569,22 @@ PrefabInstance:
     - target: {fileID: 922471034216487215, guid: 431d115260e2e3a499988e5a640d3f0c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
+      objectReference: {fileID: 2188254778172169729}
+    - target: {fileID: 922471034216487215, guid: 431d115260e2e3a499988e5a640d3f0c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OpenSettings
+      objectReference: {fileID: 0}
+    - target: {fileID: 2676540975097852626, guid: 431d115260e2e3a499988e5a640d3f0c, type: 3}
+      propertyPath: sceneName
+      value: TestLevel
       objectReference: {fileID: 0}
     - target: {fileID: 3585968848212298821, guid: 431d115260e2e3a499988e5a640d3f0c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
+      objectReference: {fileID: 2188254778172169729}
+    - target: {fileID: 3585968848212298821, guid: 431d115260e2e3a499988e5a640d3f0c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: QuitGame
       objectReference: {fileID: 0}
     - target: {fileID: 3640809804500119532, guid: 431d115260e2e3a499988e5a640d3f0c, type: 3}
       propertyPath: m_Name
@@ -581,10 +593,18 @@ PrefabInstance:
     - target: {fileID: 3999418685627426349, guid: 431d115260e2e3a499988e5a640d3f0c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
+      objectReference: {fileID: 2188254778172169729}
+    - target: {fileID: 3999418685627426349, guid: 431d115260e2e3a499988e5a640d3f0c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: StartGame
       objectReference: {fileID: 0}
     - target: {fileID: 5583828344302120799, guid: 431d115260e2e3a499988e5a640d3f0c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
+      objectReference: {fileID: 2188254778172169729}
+    - target: {fileID: 5583828344302120799, guid: 431d115260e2e3a499988e5a640d3f0c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: CloseSettings
       objectReference: {fileID: 0}
     - target: {fileID: 6682700340521824731, guid: 431d115260e2e3a499988e5a640d3f0c, type: 3}
       propertyPath: m_Pivot.x
@@ -666,6 +686,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6793294549203688106, guid: 431d115260e2e3a499988e5a640d3f0c, type: 3}
+      propertyPath: m_Resource
+      value: 
+      objectReference: {fileID: 8300000, guid: f10e30cb112b13f45875f205b5619316, type: 3}
+    - target: {fileID: 6793294549203688106, guid: 431d115260e2e3a499988e5a640d3f0c, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: f10e30cb112b13f45875f205b5619316, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -676,6 +704,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 6682700340521824731, guid: 431d115260e2e3a499988e5a640d3f0c, type: 3}
   m_PrefabInstance: {fileID: 2188254778172169724}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2188254778172169729 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2676540975097852626, guid: 431d115260e2e3a499988e5a640d3f0c, type: 3}
+  m_PrefabInstance: {fileID: 2188254778172169724}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0db81a8fedf257947902a6ebbf5e0f6c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

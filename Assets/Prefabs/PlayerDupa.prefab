@@ -18,7 +18,7 @@ GameObject:
   - component: {fileID: 2608282936700735649}
   - component: {fileID: 970770369905423017}
   m_Layer: 0
-  m_Name: ChamsterInBubble
+  m_Name: PhysicChamsterInBubble
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -127,7 +127,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveForce: 300
   jumpForce: 50
-  slopeForce: 300000
+  slopeForce: 3000
   touchingFloorLength: 1.17
   _leavingTheBubble: {fileID: 6171260967879501731}
   _chamsterWalking: {fileID: 2608282936700735649}
@@ -266,8 +266,8 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 7da2d51ea52c45f44967e538470a8052, type: 3}
-  m_Resource: {fileID: 8300000, guid: 7da2d51ea52c45f44967e538470a8052, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 6313e466b958d0d4abd222b0b1818d27, type: 3}
+  m_Resource: {fileID: 8300000, guid: 6313e466b958d0d4abd222b0b1818d27, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -705,8 +705,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _joiningTheBubble: {fileID: 2305734485511004382}
   _chamsterWalking: {fileID: 5437840539649133412}
-  moveForce: 300
-  slopeForce: 10000000
+  moveForce: 120
+  slopeForce: 700
 --- !u!54 &8431809076419353081
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -841,8 +841,8 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 7da2d51ea52c45f44967e538470a8052, type: 3}
-  m_Resource: {fileID: 8300000, guid: 7da2d51ea52c45f44967e538470a8052, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 6313e466b958d0d4abd222b0b1818d27, type: 3}
+  m_Resource: {fileID: 8300000, guid: 6313e466b958d0d4abd222b0b1818d27, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1

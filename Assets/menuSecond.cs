@@ -14,6 +14,11 @@ public class menuSecond : MonoBehaviour
 
     public void StartGame()
     {
+        if(sceneName != null && sceneName != "")
+        {
+            SceneManager.LoadScene(sceneName);
+            return;
+        }
         mainMenuPanel.gameObject.SetActive(false);
         Debug.Log("Quitsadasdasdasdasd Game");
     }

@@ -38,10 +38,10 @@ namespace Player {
         } 
     
         private void SwitchSteeringToChamster() {
-            _bubble.SetActive(true);
-            _chamster.SetActive(true);
             _bubble.transform.position = _chamsterBubble.transform.position;
             _chamster.transform.position = _chamsterBubble.transform.position + chamsterSpawnOffset;
+            _bubble.SetActive(true);
+            _chamster.SetActive(true);
             _chamsterBubble.SetActive( false);
             _chamsterBubbleRig.SetActive( false);
             _playerSteering.SwitchSteeringScheme(_chamsterSteering);
