@@ -3458,6 +3458,79 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 209740430}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1001 &215080669
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 117955341052915552, guid: 394a4fd852cd0cf468b5fafdeb452f07, type: 3}
+      propertyPath: onPlayerEnter.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 496033647}
+    - target: {fileID: 2481684814392470337, guid: 394a4fd852cd0cf468b5fafdeb452f07, type: 3}
+      propertyPath: m_Name
+      value: PlaneOfJustice (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6560037333989902780, guid: 394a4fd852cd0cf468b5fafdeb452f07, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.014326946
+      objectReference: {fileID: 0}
+    - target: {fileID: 6560037333989902780, guid: 394a4fd852cd0cf468b5fafdeb452f07, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.5196798
+      objectReference: {fileID: 0}
+    - target: {fileID: 6560037333989902780, guid: 394a4fd852cd0cf468b5fafdeb452f07, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.2226966
+      objectReference: {fileID: 0}
+    - target: {fileID: 6560037333989902780, guid: 394a4fd852cd0cf468b5fafdeb452f07, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 66
+      objectReference: {fileID: 0}
+    - target: {fileID: 6560037333989902780, guid: 394a4fd852cd0cf468b5fafdeb452f07, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 13.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 6560037333989902780, guid: 394a4fd852cd0cf468b5fafdeb452f07, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 8.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6560037333989902780, guid: 394a4fd852cd0cf468b5fafdeb452f07, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.0000029504295
+      objectReference: {fileID: 0}
+    - target: {fileID: 6560037333989902780, guid: 394a4fd852cd0cf468b5fafdeb452f07, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6560037333989902780, guid: 394a4fd852cd0cf468b5fafdeb452f07, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6560037333989902780, guid: 394a4fd852cd0cf468b5fafdeb452f07, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6560037333989902780, guid: 394a4fd852cd0cf468b5fafdeb452f07, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6560037333989902780, guid: 394a4fd852cd0cf468b5fafdeb452f07, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -180
+      objectReference: {fileID: 0}
+    - target: {fileID: 6560037333989902780, guid: 394a4fd852cd0cf468b5fafdeb452f07, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 394a4fd852cd0cf468b5fafdeb452f07, type: 3}
 --- !u!1 &216652870
 GameObject:
   m_ObjectHideFlags: 0
@@ -15642,6 +15715,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SpiralneSchodyZDywanem (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 3560394045706006369, guid: e3e7d5e54a94a4441952ca7e826d7f4b, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 4189155973950649819, guid: e3e7d5e54a94a4441952ca7e826d7f4b, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.38522926
@@ -16838,6 +16915,10 @@ PrefabInstance:
     - target: {fileID: 3560394045706006369, guid: e3e7d5e54a94a4441952ca7e826d7f4b, type: 3}
       propertyPath: m_Name
       value: SpiralneSchodyZDywanem (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3560394045706006369, guid: e3e7d5e54a94a4441952ca7e826d7f4b, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 4189155973950649819, guid: e3e7d5e54a94a4441952ca7e826d7f4b, type: 3}
       propertyPath: m_LocalScale.x
@@ -19297,6 +19378,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Schody z dywanem05 Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 3331586124461700287, guid: 81434359f37dc76418950dc8e9b9a3e9, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -19801,6 +19886,10 @@ PrefabInstance:
     - target: {fileID: 3560394045706006369, guid: e3e7d5e54a94a4441952ca7e826d7f4b, type: 3}
       propertyPath: m_Name
       value: SpiralneSchodyZDywanem
+      objectReference: {fileID: 0}
+    - target: {fileID: 3560394045706006369, guid: e3e7d5e54a94a4441952ca7e826d7f4b, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 4189155973950649819, guid: e3e7d5e54a94a4441952ca7e826d7f4b, type: 3}
       propertyPath: m_LocalScale.x
@@ -20598,6 +20687,10 @@ PrefabInstance:
     - target: {fileID: 3560394045706006369, guid: e3e7d5e54a94a4441952ca7e826d7f4b, type: 3}
       propertyPath: m_Name
       value: SpiralneSchodyZDywanem (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3560394045706006369, guid: e3e7d5e54a94a4441952ca7e826d7f4b, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 4189155973950649819, guid: e3e7d5e54a94a4441952ca7e826d7f4b, type: 3}
       propertyPath: m_LocalScale.x
@@ -23488,6 +23581,79 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d90f18e57364be846bfe3ddd2bc118ab, type: 3}
+--- !u!1001 &1085790707
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 117955341052915552, guid: 394a4fd852cd0cf468b5fafdeb452f07, type: 3}
+      propertyPath: onPlayerEnter.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 496033647}
+    - target: {fileID: 2481684814392470337, guid: 394a4fd852cd0cf468b5fafdeb452f07, type: 3}
+      propertyPath: m_Name
+      value: PlaneOfJustice (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6560037333989902780, guid: 394a4fd852cd0cf468b5fafdeb452f07, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.014326946
+      objectReference: {fileID: 0}
+    - target: {fileID: 6560037333989902780, guid: 394a4fd852cd0cf468b5fafdeb452f07, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.5196798
+      objectReference: {fileID: 0}
+    - target: {fileID: 6560037333989902780, guid: 394a4fd852cd0cf468b5fafdeb452f07, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.2226966
+      objectReference: {fileID: 0}
+    - target: {fileID: 6560037333989902780, guid: 394a4fd852cd0cf468b5fafdeb452f07, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 66
+      objectReference: {fileID: 0}
+    - target: {fileID: 6560037333989902780, guid: 394a4fd852cd0cf468b5fafdeb452f07, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 89.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 6560037333989902780, guid: 394a4fd852cd0cf468b5fafdeb452f07, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 8.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6560037333989902780, guid: 394a4fd852cd0cf468b5fafdeb452f07, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.0000029504295
+      objectReference: {fileID: 0}
+    - target: {fileID: 6560037333989902780, guid: 394a4fd852cd0cf468b5fafdeb452f07, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6560037333989902780, guid: 394a4fd852cd0cf468b5fafdeb452f07, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6560037333989902780, guid: 394a4fd852cd0cf468b5fafdeb452f07, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6560037333989902780, guid: 394a4fd852cd0cf468b5fafdeb452f07, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6560037333989902780, guid: 394a4fd852cd0cf468b5fafdeb452f07, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -180
+      objectReference: {fileID: 0}
+    - target: {fileID: 6560037333989902780, guid: 394a4fd852cd0cf468b5fafdeb452f07, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 394a4fd852cd0cf468b5fafdeb452f07, type: 3}
 --- !u!1 &1088091666
 GameObject:
   m_ObjectHideFlags: 0
@@ -27009,6 +27175,10 @@ PrefabInstance:
     - target: {fileID: 3560394045706006369, guid: e3e7d5e54a94a4441952ca7e826d7f4b, type: 3}
       propertyPath: m_Name
       value: SpiralneSchodyZDywanem (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3560394045706006369, guid: e3e7d5e54a94a4441952ca7e826d7f4b, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 4189155973950649819, guid: e3e7d5e54a94a4441952ca7e826d7f4b, type: 3}
       propertyPath: m_LocalScale.x
@@ -37105,6 +37275,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SpiralneSchodyZDywanem (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 3560394045706006369, guid: e3e7d5e54a94a4441952ca7e826d7f4b, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 4189155973950649819, guid: e3e7d5e54a94a4441952ca7e826d7f4b, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.48735
@@ -38429,6 +38603,10 @@ PrefabInstance:
     - target: {fileID: 3560394045706006369, guid: e3e7d5e54a94a4441952ca7e826d7f4b, type: 3}
       propertyPath: m_Name
       value: SpiralneSchodyZDywanem (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3560394045706006369, guid: e3e7d5e54a94a4441952ca7e826d7f4b, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 4189155973950649819, guid: e3e7d5e54a94a4441952ca7e826d7f4b, type: 3}
       propertyPath: m_LocalScale.x
@@ -40429,6 +40607,8 @@ SceneRoots:
   - {fileID: 444836559}
   - {fileID: 86776067}
   - {fileID: 1567115250}
+  - {fileID: 1085790707}
+  - {fileID: 215080669}
   - {fileID: 1556016147}
   - {fileID: 1535144512}
   - {fileID: 520105774}
