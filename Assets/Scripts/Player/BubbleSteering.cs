@@ -12,6 +12,9 @@ public class BubbleSteering : MonoBehaviour, SteeringScheme
     public float jumpForce = 5f;
     public float slopeForce = 10f;
     [SerializeField] private float touchingFloorLength = 3f;
+    [SerializeField] private AudioSource _leavingTheBubble;
+    [SerializeField] private AudioSource _chamsterWalking;
+    [SerializeField] private AudioSource _jumpSound;
     private void Start() {
         _rigidbody = GetComponent<Rigidbody>();
         _camera = Camera.main;
@@ -47,9 +50,15 @@ public class BubbleSteering : MonoBehaviour, SteeringScheme
     }
     private void UpdateAnimatorVars() {
         _animator.SetFloat("Speed", _rigidbody.linearVelocity.magnitude);
+        if (_rigidbody.linearVelocity.magnitude > 0.1f && !_chamsterWalking.isPlaying) {
+            _chamsterWalking.Play();
+        } else if (_rigidbody.linearVelocity.magnitude < 0.1f && _chamsterWalking.isPlaying) {
+            _chamsterWalking.Stop();
+        }
     }
 
     public bool Interact() {
+        _leavingTheBubble.Play();
         return true;
     }
 
@@ -60,6 +69,7 @@ public class BubbleSteering : MonoBehaviour, SteeringScheme
             return;
         }
         Debug.Log("Performing jump");
+        _jumpSound.Play();
         _rigidbody.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
     }
 
