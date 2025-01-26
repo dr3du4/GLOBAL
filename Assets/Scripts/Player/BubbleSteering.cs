@@ -70,6 +70,7 @@ public class BubbleSteering : MonoBehaviour, SteeringScheme
         }
         Debug.Log("Performing jump");
         _jumpSound.Play();
+        _animator.SetTrigger("Jump");
         _rigidbody.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
     }
 
