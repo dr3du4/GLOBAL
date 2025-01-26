@@ -26,7 +26,7 @@ public class menuFirst : MonoBehaviour
     }
 
     public void QuitGame()
-    {
+    {   Debug.Log("Quit");
         // Zamknij grę (nie działa w edytorze Unity)
         Debug.Log("Quit Game");
         Application.Quit();
