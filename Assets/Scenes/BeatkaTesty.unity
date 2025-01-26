@@ -1946,6 +1946,10 @@ PrefabInstance:
       propertyPath: target
       value: 
       objectReference: {fileID: 18396853}
+    - target: {fileID: 3753753940022961222, guid: 10a2e5e098a5e8048a932a5a1c8667eb, type: 3}
+      propertyPath: damageLayer.m_Bits
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 4823140227846432861, guid: 10a2e5e098a5e8048a932a5a1c8667eb, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.5783
